@@ -5,6 +5,8 @@ const port = process.env.PORT || 3000;
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     res.cookie('X-Domain-A', `**${Math.floor(Math.random()*100000)}**`, {
         path: '/',
